@@ -29,3 +29,5 @@ Pending:
 - Playmaker damage handler
 
 Feel free to make suggestions for other features on the [NeoFPS Discord](https://discord.neofps.com) 
+
+The demo is also not fleshed out. It currently has a character with a number of playmaker FSMs attached, and a pistol that uses a playmaker ammo effect.
