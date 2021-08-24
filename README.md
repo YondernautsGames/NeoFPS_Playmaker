@@ -27,6 +27,8 @@ Pending:
 - Inventory actions
 - Playmaker game mode
 - Playmaker damage handler
+- Health watcher (for non-player health managers)
+- Inventory watcher
 
 Feel free to make suggestions for other features on the [NeoFPS Discord](https://discord.neofps.com) 
 
