@@ -21,7 +21,7 @@ using UnityEngine;
 
 namespace NeoFPS.PlayMaker.Actions
 {
-    [ActionCategory("NeoFPS.Pooling")]
+    [ActionCategory("NeoFPS (Pooling)")]
     [HutongGames.PlayMaker.Tooltip("Recycles a pooled object")]
     public class NeoFpsPoolingRecycleObject : ComponentAction<PooledObject>
     {

@@ -21,7 +21,7 @@ using UnityEngine;
 
 namespace NeoFPS.PlayMaker.Actions
 {
-    [ActionCategory("NeoFPS.Pooling")]
+    [ActionCategory("NeoFPS (Pooling)")]
     [HutongGames.PlayMaker.Tooltip("Spawns a pooled object based on a prefab")]
     public class NeoFpsPoolingSpawnObject : FsmStateAction
     {

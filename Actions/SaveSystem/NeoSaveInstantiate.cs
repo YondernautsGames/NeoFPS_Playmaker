@@ -23,7 +23,7 @@ using UnityEngine;
 
 namespace NeoFPS.PlayMaker.Actions
 {
-    [ActionCategory("NeoFPS.SaveGames")]
+    [ActionCategory("NeoFPS (Save-Games)")]
     [HutongGames.PlayMaker.Tooltip("Performs a checkpoint load")]
     public class NeoSaveInstantiate : ComponentAction<NeoSerializedGameObject>
     {

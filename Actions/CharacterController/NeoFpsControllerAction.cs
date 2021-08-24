@@ -25,7 +25,7 @@ namespace NeoFPS.PlayMaker.Actions
     {
         [RequiredField]
         [CheckForComponent(typeof(MotionController))]
-        [HutongGames.PlayMaker.Tooltip("The target. An Animator component is required")]
+        [HutongGames.PlayMaker.Tooltip("The target. A MotionController component is required")]
         public FsmOwnerDefault gameObject;
 
         public bool everyFrame;

@@ -20,7 +20,7 @@ using UnityEngine;
 
 namespace NeoFPS.PlayMaker.Actions
 {
-    [ActionCategory("NeoFPS.CharacterController")]
+    [ActionCategory("NeoFPS (CharacterController)")]
     [HutongGames.PlayMaker.Tooltip("Gets the controller's gravity vector")]
     public class NeoFpsControllerGetGravity : NeoFpsControllerAction
     {

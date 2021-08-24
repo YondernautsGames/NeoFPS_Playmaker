@@ -20,7 +20,7 @@ using UnityEngine;
 
 namespace NeoFPS.PlayMaker.Actions
 {
-    [ActionCategory("NeoFPS.CharacterController")]
+    [ActionCategory("NeoFPS (CharacterController)")]
     [HutongGames.PlayMaker.Tooltip("Sets the controller's capsule height")]
     public class NeoFpsControllerSetHeight : NeoFpsControllerAction
     {

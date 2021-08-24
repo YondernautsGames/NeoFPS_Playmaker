@@ -20,7 +20,7 @@ using UnityEngine;
 
 namespace NeoFPS.PlayMaker.Actions
 {
-    [ActionCategory("NeoFPS.Health")]
+    [ActionCategory("NeoFPS (Health & Damage)")]
     [HutongGames.PlayMaker.Tooltip("Gets the health of a NeoFPS character")]
     public class NeoFpsHealthGetHealth : NeoFpsHealthManagerAction
     {

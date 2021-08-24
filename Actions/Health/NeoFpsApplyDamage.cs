@@ -21,6 +21,8 @@ using UnityEngine;
 
 namespace NeoFPS.PlayMaker.Actions
 {
+    [ActionCategory("NeoFPS (Health & Damage)")]
+    [HutongGames.PlayMaker.Tooltip("Applies damage to a NeoFPS damage handler")]
     public class NeoFpsApplyDamage : ComponentAction<BasicDamageHandler>
     {
         [RequiredField]

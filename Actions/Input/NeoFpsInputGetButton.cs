@@ -20,7 +20,7 @@ using UnityEngine;
 
 namespace NeoFPS.PlayMaker.Actions
 {
-    [ActionCategory("NeoFPS.Input")]
+    [ActionCategory("NeoFPS (Input)")]
     [HutongGames.PlayMaker.Tooltip("Gets the pressed state of a button.")]
     public class NeoFpsInputGetButton : FsmStateAction
     {

@@ -23,7 +23,7 @@ using UnityEngine.SceneManagement;
 
 namespace NeoFPS.PlayMaker.Actions
 {
-    [ActionCategory("NeoFPS.SceneManagement")]
+    [ActionCategory("NeoFPS (Scene Management)")]
     [HutongGames.PlayMaker.Tooltip("Spawns a pooled object based on a prefab")]
     public class NeoSceneManagerLoadScene : FsmStateAction
     {

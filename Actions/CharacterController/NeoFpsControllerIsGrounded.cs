@@ -20,7 +20,7 @@ using UnityEngine;
 
 namespace NeoFPS.PlayMaker.Actions
 {
-    [ActionCategory("NeoFPS.CharacterController")]
+    [ActionCategory("NeoFPS (CharacterController)")]
     [HutongGames.PlayMaker.Tooltip("Checks if the controller is grounded")]
     public class NeoFpsControllerIsGrounded : NeoFpsControllerAction
     {

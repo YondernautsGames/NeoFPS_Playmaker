@@ -20,7 +20,7 @@ using UnityEngine;
 
 namespace NeoFPS.PlayMaker.Actions
 {
-    [ActionCategory("NeoFPS.Input")]
+    [ActionCategory("NeoFPS (Input)")]
     [HutongGames.PlayMaker.Tooltip("Sends an Event when a button is released.")]
     public class NeoFpsInputGetButtonUp : FsmStateAction
     {

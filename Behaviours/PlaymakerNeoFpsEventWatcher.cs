@@ -39,10 +39,16 @@ namespace NeoFPS.PlayMaker
         [SerializeField, UnityEngine.Tooltip("The variable name for the player character is alive variable in the PlayMaker FSM")]
         private string m_PlayerIsAliveVariable = "playerIsAlive";
 
+        [SerializeField, UnityEngine.Tooltip("The event name for the first person camera change event in the PlayMaker FSM")]
+        private string m_OnFpsCameraChanged = "onFpsCameraChanged";
+        [SerializeField, UnityEngine.Tooltip("The variable name for the first person camera variable in the PlayMaker FSM")]
+        private string m_FpsCameraVariable = "fpsCamera";
+
         private PlayMakerFSM m_FSM = null;
         private FsmGameObject m_PlayerCharacter = null;
         private FsmGameObject m_PlayerInventory = null;
         private FsmGameObject m_PlayerHealthManager = null;
+        private FsmGameObject m_FpsPersonCamera = null;
         private FsmBool m_PlayerIsAlive = null;
         private FpsSoloCharacter m_Character = null;
 
@@ -60,6 +66,8 @@ namespace NeoFPS.PlayMaker
                 m_PlayerInventory = m_FSM.FsmVariables.FindFsmGameObject(m_PlayerInventoryVariable);
             if (!string.IsNullOrEmpty(m_PlayerHealthManagerVariable))
                 m_PlayerHealthManager = m_FSM.FsmVariables.FindFsmGameObject(m_PlayerHealthManagerVariable);
+            if (!string.IsNullOrEmpty(m_FpsCameraVariable))
+                m_FpsPersonCamera = m_FSM.FsmVariables.FindFsmGameObject(m_FpsCameraVariable);
 
             //if (!string.IsNullOrEmpty(m_OnPlayerIsAliveChanged))
             //    m_PlayerIsAlive = m_FSM.FsmEvents.(m_PlayerIsAliveVariable);
@@ -68,6 +76,9 @@ namespace NeoFPS.PlayMaker
 
             FpsSoloCharacter.onLocalPlayerCharacterChange += OnLocalPlayerCharacterChange;
             OnLocalPlayerCharacterChange(FpsSoloCharacter.localPlayerCharacter);
+
+            FirstPersonCamera.onCurrentCameraChanged += OnCurrentCameraChanged;
+            OnCurrentCameraChanged(FirstPersonCamera.current);
         }
 
         void OnLocalPlayerCharacterChange(FpsSoloCharacter character)
@@ -133,6 +144,17 @@ namespace NeoFPS.PlayMaker
             // Send the is alive event
             if (!string.IsNullOrEmpty(m_OnPlayerIsAliveChanged))
                 m_FSM.SendEvent(m_OnPlayerIsAliveChanged);
+        }
+
+        void OnCurrentCameraChanged(FirstPersonCamera cam)
+        {
+            // Set the camera variable
+            if (m_FpsPersonCamera != null)
+                m_FpsPersonCamera.Value = cam.gameObject;
+
+            // Send the camera change event
+            if (!string.IsNullOrEmpty(m_OnFpsCameraChanged))
+                m_FSM.SendEvent(m_OnFpsCameraChanged);
         }
     }
 }

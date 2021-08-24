@@ -22,7 +22,7 @@ using UnityEngine;
 
 namespace NeoFPS.PlayMaker.Actions
 {
-    [ActionCategory("NeoFPS.SaveGames")]
+    [ActionCategory("NeoFPS (Save-Games)")]
     [HutongGames.PlayMaker.Tooltip("Performs a checkpoint autosave")]
     public class NeoSaveCheckpointSave : FsmStateAction
     {
