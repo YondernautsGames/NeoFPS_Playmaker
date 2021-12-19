@@ -146,7 +146,7 @@ namespace NeoFPS.PlayMaker
                 m_FSM.SendEvent(m_OnPlayerIsAliveChanged);
         }
 
-        void OnCurrentCameraChanged(FirstPersonCamera cam)
+        void OnCurrentCameraChanged(FirstPersonCameraBase cam)
         {
             // Set the camera variable
             if (m_FpsPersonCamera != null)
