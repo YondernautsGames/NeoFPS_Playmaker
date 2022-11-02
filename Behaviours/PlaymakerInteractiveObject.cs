@@ -20,40 +20,42 @@ using HutongGames.PlayMaker;
 namespace NeoFPS.PlayMaker
 {
     [RequireComponent(typeof(IInteractiveObject))]
-    [RequireComponent(typeof(PlayMakerFSM))]
     public class PlaymakerInteractiveObject : MonoBehaviour
     {
         [SerializeField, UnityEngine.Tooltip("[Required] The event name for the interactive object's onUsed event.")]
-        private string m_OnPlayerCharacterChanged = "onUsed";
+        private string m_OnUsedEvent = "interact";
         [SerializeField, UnityEngine.Tooltip("[Optional] The variable name for the player character object variable in the PlayMaker FSM")]
         private string m_PlayerCharacterVariable = "playerCharacter";
-		
-        private PlayMakerFSM m_FSM = null;
+		[SerializeField, UnityEngine.Tooltip("The FSM to edit.")]
+		private PlayMakerFSM m_FSM = null;
+
         private FsmGameObject m_PlayerCharacter = null;
 		
 		void Awake()
 		{
-			// Get the FSM
-            m_FSM = GetComponent<PlayMakerFSM>();
-			
             // Get the character variable in the FSM
             if (!string.IsNullOrEmpty(m_PlayerCharacterVariable))
                 m_PlayerCharacter = m_FSM.FsmVariables.FindFsmGameObject(m_PlayerCharacterVariable);
 			
 			// Attach to the interactive object event handler
 			var interactiveObject = GetComponent<IInteractiveObject>();
-			interactiveObject.onUsed += OnUsed;		
+			interactiveObject.onUsed += OnUsed;
 		}
 		
 		void OnUsed(ICharacter character)
 		{
-			// Set the player character variable
-			if (m_PlayerCharacter != null)
-				m_PlayerCharacter.Value = character.gameObject;
-				
-            // Send the onUsed event
-            if (!string.IsNullOrEmpty(m_OnPlayerCharacterChanged))
-                m_FSM.SendEvent(m_OnPlayerCharacterChanged);
+			if (m_FSM != null)
+			{
+				// Set the player character variable
+				if (m_PlayerCharacter != null)
+					m_PlayerCharacter.Value = character.gameObject;
+
+				// Send the onUsed event
+				if (!string.IsNullOrEmpty(m_OnUsedEvent))
+					m_FSM.SendEvent(m_OnUsedEvent);
+			}
+			else
+				Debug.Log("Playmaker FSM is not set");
 		}
 	}
 }
