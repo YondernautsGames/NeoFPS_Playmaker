@@ -23,7 +23,7 @@ namespace NeoFPS.PlayMaker
     public class PlaymakerInteractiveObject : MonoBehaviour
     {
         [SerializeField, UnityEngine.Tooltip("[Required] The event name for the interactive object's onUsed event.")]
-        private string m_OnUsedEvent = "interact";
+        private string m_OnUsedEvent = "onUsed";
         [SerializeField, UnityEngine.Tooltip("[Optional] The variable name for the player character object variable in the PlayMaker FSM")]
         private string m_PlayerCharacterVariable = "playerCharacter";
 		[SerializeField, UnityEngine.Tooltip("The FSM to edit.")]

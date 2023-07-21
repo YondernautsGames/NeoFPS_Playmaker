@@ -22,8 +22,8 @@ using UnityEngine;
 namespace NeoFPS.PlayMaker.Actions
 {
     [ActionCategory("NeoFPS (Inventory)")]
-    [HutongGames.PlayMaker.Tooltip("Removes an inventory item from the player character's inventory based on the specific inventory ID")]
-    public class NeoFpsInventoryRemoveItem : NeoFpsInventoryAction
+    [HutongGames.PlayMaker.Tooltip("Removes an inventory item from the player character's inventory based on the provided int variable")]
+    public class NeoFpsInventoryRemoveVariableItem : NeoFpsInventoryAction
     {
         [RequiredField]
         [HutongGames.PlayMaker.Tooltip("The inventory ID of the object to remove.")]
