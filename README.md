@@ -3,6 +3,9 @@ Integration assets for using Playmaker with NeoFPS
 
 It requires the assets [NeoFPS](https://assetstore.unity.com/packages/templates/systems/neofps-150179?aid=1011l58Ft) and [Playmaker](https://assetstore.unity.com/packages/tools/visual-scripting/playmaker-368?aid=1011l58Ft).
 
+> [!WARNING]
+> Do not place the integration folder inside the NeoFPS asset folder structure. If you do this then all of its scripts will be picked up by the NeoFPS assembly definition, which will limit what other scripts within the project they have access to. For more information on assembly definitions, see [the Unity Manual](https://docs.unity3d.com/Manual/ScriptCompilationAssemblyDefinitionFiles.html).
+
 NB: This integration is under development. It is released as is because some elements are complete and usable.
 
 Complete:
